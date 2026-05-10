@@ -1,13 +1,23 @@
-const express = require("express");
-const cors = require("cors");
+import express from "express";
+import cors from "cors";
+import predictRoutes from "../routes/predictRoutes.js";
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "*",
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
+
 app.use(express.json());
 
+app.options("*", cors());
+
+app.use("/predict", predictRoutes);
+
 app.get("/", (req, res) => {
-  res.json({ message: "Backend working" });
+  res.json({ message: "API working" });
 });
 
-module.exports = app;
+export default app;
