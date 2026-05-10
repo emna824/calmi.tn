@@ -1,0 +1,195 @@
+{
+  "project": "Calmi.tn",
+  "source_notebook": "C:\\Users\\EMNA0\\Desktop\\ml\\Untitled7.ipynb",
+  "dataset": "C:\\Users\\EMNA0\\Desktop\\ml\\panic_disorder_dataset_realistic.csv",
+  "drop_columns": [
+    "Participant ID"
+  ],
+  "targets": {
+    "classification": "Panic Disorder Diagnosis",
+    "severity": "Severity"
+  },
+  "columns": [
+    "Participant ID",
+    "Age",
+    "Gender",
+    "Family History of Anxiety",
+    "Smoking",
+    "Alcohol Consumption",
+    "Sleep Quality",
+    "Stress Level",
+    "Physical Activity",
+    "Caffeine Intake",
+    "Therapy History",
+    "Work Pressure",
+    "Social Support",
+    "Panic Score",
+    "Anxiety Score",
+    "Depression Score",
+    "Heart Rate",
+    "Symptoms",
+    "Severity",
+    "Panic Disorder Diagnosis"
+  ],
+  "feature_columns": [
+    "Age",
+    "Gender",
+    "Family History of Anxiety",
+    "Smoking",
+    "Alcohol Consumption",
+    "Sleep Quality",
+    "Stress Level",
+    "Physical Activity",
+    "Caffeine Intake",
+    "Therapy History",
+    "Work Pressure",
+    "Social Support",
+    "Panic Score",
+    "Anxiety Score",
+    "Depression Score",
+    "Heart Rate",
+    "Symptoms"
+  ],
+  "numeric_columns": [
+    "Age",
+    "Panic Score",
+    "Anxiety Score",
+    "Depression Score",
+    "Heart Rate"
+  ],
+  "categorical_columns": [
+    "Gender",
+    "Family History of Anxiety",
+    "Smoking",
+    "Alcohol Consumption",
+    "Sleep Quality",
+    "Stress Level",
+    "Physical Activity",
+    "Caffeine Intake",
+    "Therapy History",
+    "Work Pressure",
+    "Social Support",
+    "Symptoms"
+  ],
+  "cluster_features": [
+    "Anxiety Score",
+    "Depression Score",
+    "Panic Score"
+  ],
+  "recommendation_features": [
+    "Age",
+    "Sleep Quality",
+    "Stress Level",
+    "Physical Activity",
+    "Caffeine Intake",
+    "Work Pressure",
+    "Social Support",
+    "Anxiety Score",
+    "Depression Score"
+  ],
+  "category_options": {
+    "Gender": [
+      "Female",
+      "Male"
+    ],
+    "Family History of Anxiety": [
+      "No",
+      "Yes"
+    ],
+    "Smoking": [
+      "No",
+      "Yes"
+    ],
+    "Alcohol Consumption": [
+      "High",
+      "Low",
+      "Moderate"
+    ],
+    "Sleep Quality": [
+      "Average",
+      "Good",
+      "Poor"
+    ],
+    "Stress Level": [
+      "High",
+      "Low",
+      "Moderate"
+    ],
+    "Physical Activity": [
+      "High",
+      "Low",
+      "Moderate"
+    ],
+    "Caffeine Intake": [
+      "High",
+      "Low",
+      "Moderate"
+    ],
+    "Therapy History": [
+      "No",
+      "Yes"
+    ],
+    "Work Pressure": [
+      "High",
+      "Low",
+      "Moderate"
+    ],
+    "Social Support": [
+      "High",
+      "Low",
+      "Moderate"
+    ],
+    "Symptoms": [
+      "Chest Pain",
+      "Dizziness",
+      "Fear of Losing Control",
+      "Nausea",
+      "None/Mild",
+      "Palpitations",
+      "Restlessness",
+      "Shortness of Breath",
+      "Sweating",
+      "Trembling"
+    ]
+  },
+  "imputation": {
+    "numeric": {
+      "Age": 34.0,
+      "Panic Score": 4.47,
+      "Anxiety Score": 5.0,
+      "Depression Score": 4.2,
+      "Heart Rate": 77.9
+    },
+    "categorical": {
+      "Gender": "Female",
+      "Family History of Anxiety": "No",
+      "Smoking": "No",
+      "Alcohol Consumption": "Moderate",
+      "Sleep Quality": "Average",
+      "Stress Level": "Moderate",
+      "Physical Activity": "Moderate",
+      "Caffeine Intake": "Moderate",
+      "Therapy History": "No",
+      "Work Pressure": "Moderate",
+      "Social Support": "Moderate",
+      "Symptoms": "None/Mild"
+    }
+  },
+  "label_classes": {
+    "classification": [
+      "No Panic Disorder",
+      "Panic Disorder"
+    ],
+    "severity": [
+      "High",
+      "Low",
+      "Moderate",
+      "Severe"
+    ],
+    "clusters": {
+      "0": "Profil stable",
+      "1": "Profil anxieux modéré",
+      "2": "Profil anxieux élevé"
+    }
+  }
+}
