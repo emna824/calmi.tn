@@ -8,12 +8,37 @@ const scriptPath = path.resolve(__dirname, "../ml/predict.py");
 
 export function runPrediction(mode, payload) {
   return new Promise((resolve, reject) => {
-    const pythonBin = process.env.PYTHON_BIN || "python";
+   /* const pythonBin = process.env.PYTHON_BIN || "python";
     const child = spawn(pythonBin, [scriptPath, mode, JSON.stringify(payload || {})], {
       cwd: path.dirname(scriptPath),
       windowsHide: true
     });
+*/
+export async function runPrediction(mode, payload) {
+  try {
+    const response = await fetch(process.env.PYTHON_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+              mode,
+              payload: payload || {}
+            })
+    });
 
+    if (!response.ok) {
+      throw new Error("Python service error");
+    }
+
+    return await response.json();
+
+  } catch (error) {
+    throw {
+      status: 500,
+      message: "Python service unavailable",
+      details: error.message
+    };
+  }
+}
     let stdout = "";
     let stderr = "";
 
